@@ -4,7 +4,7 @@ The plugin provides the following REST API endpoints for developers to integrate
 
 ## Get View Count ![Lite](https://img.shields.io/badge/Lite-green)
 
-**GET** `/wp-json/rw-cvc/v1/views/{post_id}`
+**GET** `/wp-json/rwpsp/v1/views/{post_id}`
 
 - Parameters：
   - `post_id`：Post ID
@@ -20,7 +20,7 @@ The plugin provides the following REST API endpoints for developers to integrate
 
 ## Get View Count ![Pro](https://img.shields.io/badge/Pro-purple) ![Lifetime](https://img.shields.io/badge/Lifetime-gold)
 
-**GET** `/wp-json/rw-cvc/v1/views/{post_id}?days=7`
+**GET** `/wp-json/rwpsp/v1/views/{post_id}?days=7`
 
 - Parameters：
   - `post_id`：Post ID
@@ -43,7 +43,7 @@ The plugin provides the following REST API endpoints for developers to integrate
 
 ## Increase View Count ![Pro](https://img.shields.io/badge/Pro-purple) ![Lifetime](https://img.shields.io/badge/Lifetime-gold)
 
-**POST** `/wp-json/rw-cvc/v1/increase/{post_id}`
+**POST** `/wp-json/rwpsp/v1/increase/{post_id}`
 
 - Parameters：
   - `post_id`：Post ID

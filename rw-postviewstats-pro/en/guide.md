@@ -1,9 +1,9 @@
-# Concise Views Counter Pro (CVCP) - User Guide
+# RW PostViewStats Pro (RWPSP) - User Guide
 
 **Plugin Version:** 1.0.0  
 **Compatible with WordPress:** 6.8  
 **Minimum PHP Version:** 8.2  
-**Minimum MySQL Version:** 5.7  
+**Minimum MySQL Version:** 8.0  
 **Summary:** A multisite-supported view counter and data management tool for WordPress.
 
 ---
@@ -32,9 +32,9 @@
 ### 2.1 View Counter
 
 - **Supports:** Posts, Pages, Custom Post Types.
-- **Excludes:** Attachments and WooCommerce products (by default).
-- **Anti-Duplication Logic:** Avoids counting reloads by the same user in a short period.
-- **User Scope:** Differentiates between logged-in users and guests.
+- **Excludes:** No specific exclusions — attachments, WooCommerce products, and other post types are counted unless manually disabled by the user.
+- **Anti-Duplication Logic:** A view is counted only once per browser within a 12-hour window. Switching to another browser may generate an additional view because the system does not use IP restrictions.
+- **User Scope:** Views are counted the same way for all visitors — logged-in and non-logged-in users are treated equally.
 - **Tracking Method:** Automatically integrated — no manual code insertion required.
 
 ---
@@ -43,13 +43,29 @@
 
 #### Cleaning
 
-- **Criteria:** Clean data by date range or post type.
-- **Safety:** Preview and confirm before deletion.
+- **Functionality:** 
+ 
+    The cleaning tool removes outdated tracking data but never deletes all statistics at once. It always retains data newer than the specified date.
+
+ 
+- **Lite Version Behavior:** 
+  - Automatically restricts cleaning to data older than 30 days.
+  - Always keeps statistics from the most recent 30 days.
+  - Post type is limited to post and page only.
+ 
+ 
+- **Pro / Lifetime Version Behavior:** 
+  - Allows selecting any custom date to decide which data to keep.
+  - Data older than the chosen date will be removed.
+  - Supports cleaning for any registered post type.
+
+
+- **Safety:** Only expired data is removed; valid and recent data is retained and recalculated, ensuring that total counts remain accurate.
 
 #### Export
 
-- **Formats:** CSV and JSON.
-- **Fields:** URL, View Count, Date Range, Post Type, and more.
+- **Formats:** CSV.
+- **Fields:** Post ID, Title, Views.
 
 ---
 
@@ -57,12 +73,14 @@
 
 Example:
 ```shortcode
-[top_views limit="5" post_type="post"]
+[rwpsp_post_views post_id="123"]
 ```
 
 - **Parameters:**
-  - `limit` — Number of posts to display.
-  - `post_type` — Post type filter (e.g., post, page).
+  - `post_id` — NQuery a specific post by its ID. Example: [rwpsp_post_views post_id="123"]. (Lite/Pro/Lifetime)
+  - `date` — Show views for a specific date. Format: YYYY-MM-DD. Example: [rwpsp_post_views date="2023-01-01"]. (Pro only)
+  - `start` — Start date for a range query. Format: YYYY-MM-DD. Used together with end. Example: [rwpsp_post_views start="2023-01-01" end="2023-01-31"]. (Pro only)
+  - `end` — End date for a range query. Format: YYYY-MM-DD. Used together with start. (Pro only)
 - **Theme Dependency:** Not required.
 
 ---
@@ -71,7 +89,7 @@ Example:
 
 - **Endpoint Example:**
   ```
-  /wp-json/cvcp/v1/stats
+  /wp-json/rwpsp/v1/views/{post_id}?days=7
   ```
 
 - **Authentication:** Basic Auth or WordPress REST authentication.
@@ -79,9 +97,11 @@ Example:
 ```json
 {
   "post_id": 123,
-  "views": 456,
-  "url": "https://example.com/sample-post",
-  "title": "Sample Post"
+  "total_views": 1578,
+  "daily_views": {
+    "2025-07-01": 300,
+    "2025-07-02": 220
+  }
 }
 ```
 
@@ -90,11 +110,11 @@ Example:
 ### 2.5 Multisite Support
 
 - **Per-Site Tracking:** Each site maintains its own view counts.
-- **Network Admin View:** Super admins can view and manage statistics across the entire network.
+- **Network Admin Controls:** Super admins can enter the purchase code in the Network Admin to activate Pro features and push unified settings to child sites, but they cannot view or manage individual sites’ statistics from a single, network-wide dashboard.
 
 ---
 
 ## Support
 
-For more details, licensing, or updates, visit [Codecanyon - CVCP](https://codecanyon.net/).
+For more details, licensing, or updates, visit [Codecanyon - RWPSP](https://codecanyon.net/item/rw-postviewstats-pro/12345678).
 

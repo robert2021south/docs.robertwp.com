@@ -1,6 +1,6 @@
 # 📊 Data Export Feature Guide
 
-The **Concise Views Counter Pro** plugin provides a simple way to export page view data as a CSV file. This helps you analyze, back up, or migrate your post and page traffic data.
+The **RW PostViewStats Pro** plugin provides a simple way to export page view data as a CSV file. This helps you analyze, back up, or migrate your post and page traffic data.
 
 This feature includes both **Lite** and **Pro** user functionality, with clear distinctions shown below.
 
@@ -12,7 +12,7 @@ This feature includes both **Lite** and **Pro** user functionality, with clear d
 
 2. Go to the menu:
    ```
-   Settings → Concise Views Counter → Data Export
+   Settings → RW PostViewStats Pro → Data Export
    ```
 
 3. Choose the **post type** you want to export:
@@ -73,7 +73,7 @@ page-views-export-post-2025-07-11_12-00-00.csv
 
 ## 🚀 How to Upgrade to Pro
 
-To unlock custom post type export and additional advanced features, consider upgrading to **Concise Views Counter Pro**:
+To unlock custom post type export and additional advanced features, consider upgrading to **RW PostViewStats Pro**:
 
 👉 [The purchase link will be provided here after the Pro version is released.](#)
 ---
@@ -82,5 +82,5 @@ To unlock custom post type export and additional advanced features, consider upg
 
 If you need assistance or run into issues, feel free to reach out:
 
-- Plugin Page: [https://wordpress.org/plugins/rw-postviewstats-pro](https://wordpress.org/plugins/rw-postviewstats-pro)
+- Plugin Page: [https://wordpress.org/plugins/rw-postviewstats-lite/](https://wordpress.org/plugins/rw-postviewstats-lite/) 
 - Email: `support@example.com`

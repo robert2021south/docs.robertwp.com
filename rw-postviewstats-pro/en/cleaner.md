@@ -1,18 +1,20 @@
-# 📦 View Count Data Cleaner - User Guide (Concise Views Counter Pro)
+# 📦 Data Cleaner - User Guide (RW PostViewStats Pro)
 
 ## Overview
 
-The Data Cleaner allows you to **delete old view count records** to reduce database size and improve site performance.
+The Data Cleaner allows you to remove outdated daily view records, helping reduce database size while always keeping recent valid statistics.
+It **never deletes all data** at once — recent view data is always preserved.
 
-You can clean data by **Post Type** and optionally by **Date Limit**. The Pro version supports cleaning custom post types as well.
+Lite and Pro versions behave differently regarding date limits and supported post types.
+
 
 ---
 
 ## 🔧 How to Use
 
-1. Go to your WordPress Dashboard → **Tools → Clear View Count Data**
+1. Go to **RW PostViewStats Pro → Data Cleaner** in your WordPress dashboard.
 2. Select the **Post Type** you want to clean.
-3. (Optional) Enter a **Date Limit** in the format `YYYYMMDD`
+3. (Pro Only) Enter a **Date Limit** in the format `YYYYMMDD`
    - Only records **older than this date** will be deleted.
    - Example: Entering `20250501` will delete records **before May 1, 2025**.
 4. Click **[Clean up now]** to execute the cleanup.
