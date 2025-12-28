@@ -42,16 +42,19 @@ RW WebP Converter Lite is a lightweight WordPress plugin that converts JPG and P
 2. Configure bulk conversion and automatic conversion options
 3. Save your settings; the plugin will handle image conversion according to your preferences
 
-> For detailed instructions, see the [User Guide](guide.md).
+> This plugin is designed to work out of the box.  
+> You can fine-tune its behavior using the settings described below.
 
 ---
 
 ## 📚 Documentation Navigation
 
-- [User Guide](guide.md) — Complete tutorial for using the plugin
-- [Bulk Conversion](bulk.md) — How to process existing images in bulk
-- [Automatic Conversion](auto.md) — Settings for automatic conversion of new uploads
-- [FAQ](faq.md) — Frequently asked questions and answers
+- [Bulk Conversion](bulk.md) — How to convert existing images in the Media Library
+- [Automatic Conversion](auto.md) — How images are converted automatically on upload
+- [Settings](settings.md) — Explanation of all available settings
+- [FAQ](faq.md) — Common questions and limitations
+- [Changelog](changelog.md) — Version history and changes
+- [Support](support.md) — Get help and report issues
 
 ---
 

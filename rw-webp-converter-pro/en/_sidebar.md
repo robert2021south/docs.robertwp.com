@@ -1,6 +1,6 @@
 * [Home](README.md)
-* [Bulk Converter](bulk.md)
-* [Auto Converter](auto.md)
+* [Bulk Conversion](bulk.md)
+* [Automatic Conversion](auto.md)
 * [Setting](settings.md)
 * [FAQ](faq.md)
 * [Changelog](changelog.md)
