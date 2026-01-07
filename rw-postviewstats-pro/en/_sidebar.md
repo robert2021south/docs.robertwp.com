@@ -1,3 +1,4 @@
+<!-- search bar will be show here -->
 * [Home](README.md)
 * [Guide](guide.md)
 * [FAQ](faq.md)

@@ -1,3 +1,4 @@
+<!-- search bar will be show here --> 
 * [Home](README.md)
 * [Bulk Conversion](bulk.md)
 * [Automatic Conversion](auto.md)
