@@ -1,4 +1,4 @@
-# RW WebP Converter Pro
+# RW WebP Converter Lite
 
 ![WordPress Plugin Version](https://img.shields.io/badge/Version-1.0.0-blue)
 ![WordPress](https://img.shields.io/badge/WordPress-6.6%2B-green)

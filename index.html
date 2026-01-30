@@ -5,18 +5,32 @@
     <title>RobertWP Documentation – WordPress Plugins Made Simple</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Docsify 样式 -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJKL058KSB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-FJKL058KSB', {
+            'cookie_domain': 'auto'  // 支持跨子域名
+        });
+    </script>
 </head>
 
 <body>
 <div id="app"></div>
 
 <script>
+    // Docsify 配置
     window.$docsify = {
         name: 'RobertWP Docs',
 
         // 基础结构
-        loadSidebar: false,
+        loadSidebar: true,
         loadNavbar: false,
 
         // 路由
@@ -28,11 +42,38 @@
             placeholder: 'Search documentation',
             noData: 'No results',
             depth: 4
-        }
+        },
+
+        // GA4 页面统计插件
+        plugins: [
+            function(hook, vm) {
+                let lastPath = ''; // 上一次访问的 Markdown 文件路径
+
+                // 页面切换后执行
+                hook.doneEach(function() {
+                    const currentPath = vm.route.path || '/';  // 改为 route.path
+
+                    // 动态标题
+                    document.title = vm.config.name + ' – ' + (vm.route.title || '');
+
+                    // 只在切换不同子页面时触发 GA
+                    if (currentPath !== lastPath && typeof gtag === 'function') {
+                        gtag('event', 'page_view', {
+                            page_path: currentPath,
+                            page_title: document.title
+                        });
+                        lastPath = currentPath;
+                    }
+                });
+
+            }
+        ]
     };
 </script>
 
+<!-- Docsify 核心脚本 -->
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+<!-- 搜索插件 -->
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
